@@ -30,7 +30,7 @@ btnEl.addEventListener("click", function() {
 });
 
 //voglio creare un array di 16 numeri casuali (fatto)
-//far sì che questi numeri siano compresi nei blocchi dell'esercizio
+//far sì che questi numeri siano compresi nei blocchi dell'esercizio attraverso forse un comando di parametri o forse tramite un'altra funzione(?)
 
 //voglio creare un array di 16 numeri casuali
 let numSpawn = Array.from({length: 16}, () => Math.floor(Math.random() * 100) + 1);
