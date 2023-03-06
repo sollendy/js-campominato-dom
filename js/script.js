@@ -19,6 +19,7 @@ const resultEl = document.getElementById("result-cnt");
 //creo le variabili del numero di celle nella griglia
 let celle = 101;
 let bombSpawn = [];
+let contatore = 0;
 
 //creo gli elementi div uno alla volta in un ciclo for presi dalla funzione
 
@@ -58,14 +59,26 @@ function SquareSpawn(celNum, colNum) {
     cellaEl.addEventListener('click', function() {
         //voglio creare un array di 16 numeri casuali, lo inserisco prima del periodo in modo tale che l'array non si ripeta
         cellaEl.classList.add("clicked");
-        let vittoria;
+        let bomba = true;
         if (bombSpawn.includes(parseInt(cellaEl.innerText))) {
             cellaEl.style.backgroundColor = "red";
             //document.writeln("hai perso! ricarica per ricominciare");
-            vittoria = false;
-        } else {
-            cellaEl.style.backgroundColor = "blue";
+            bomba = true;
             console.log(celNum);
+        } else {
+            bomba = false;
+            cellaEl.style.backgroundColor = "blue";
+            contatore ++;
+            console.log(celNum, contatore);
+        }
+
+        if (bomba) {
+            contEl.style.display = "none";
+            let loseEvent = document.createElement("p");
+            loseEvent.innerText = "sei esploso, ricarica e riprova!";
+            loseEvent.append(resultEl);
+            resultEl.style.display = "block";
+            
         }
         //adesso voglio dire che ad essere stampato su console il numero della casella cliccata, come lo traduco nel linguaggio js?
     });
