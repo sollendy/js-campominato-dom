@@ -33,8 +33,8 @@ btnEl.addEventListener("click", function() {
 //far sì che questi numeri siano compresi nei blocchi dell'esercizio attraverso forse un comando di parametri o forse tramite un'altra funzione(?)
 
 //voglio creare un array di 16 numeri casuali
-let numSpawn = Array.from({length: 16}, () => Math.floor(Math.random() * 100) + 1);
-console.log(numSpawn);
+let bombSpawn = Array.from({length: 16}, () => Math.floor(Math.random() * 100) + 1);
+console.log(bombSpawn);
 function SquareSpawn(celNum, colNum) {
     //--> nel click voglio che:
     //si crei un nuovo elemento che sarà un div
