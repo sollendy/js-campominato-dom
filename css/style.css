@@ -25,3 +25,7 @@
 #result-cnt .lose-ban {
     color: red;
 }
+
+#result-cnt .win-ban {
+    color: green;
+}
