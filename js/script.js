@@ -76,7 +76,8 @@ function SquareSpawn(celNum, colNum) {
             contEl.style.display = "none";
             let loseEvent = document.createElement("h2");
             loseEvent.innerText = "sei esploso, ricarica e riprova!";
-            loseEvent.append(resultEl);
+            resultEl.append(loseEvent);
+            loseEvent.classList.add("lose-ban");
             resultEl.style.display = "block";
         }
         //adesso voglio dire che ad essere stampato su console il numero della casella cliccata, come lo traduco nel linguaggio js?

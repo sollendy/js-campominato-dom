@@ -21,3 +21,7 @@
 #result-cnt {
     display: none;
 }
+
+#result-cnt .lose-ban {
+    color: red;
+}
