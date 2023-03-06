@@ -1,0 +1,19 @@
+
+#general-cnt {
+    /* padding-top: 20px; */
+    display: flex;
+    flex-flow: row wrap;
+    width: 50%;
+    background-color: rgb(127, 255, 212);
+}
+
+.quadrato {
+    /* display: none; */
+    height: 50px;
+    width: calc(100% / 10);
+    border: solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
