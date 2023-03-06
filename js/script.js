@@ -29,6 +29,12 @@ btnEl.addEventListener("click", function() {
     }
 });
 
+//voglio creare un array di 16 numeri casuali (fatto)
+//far sì che questi numeri siano compresi nei blocchi dell'esercizio
+
+//voglio creare un array di 16 numeri casuali
+let numSpawn = Array.from({length: 16}, () => Math.floor(Math.random() * 100) + 1);
+console.log(numSpawn);
 function SquareSpawn(celNum, colNum) {
     //--> nel click voglio che:
     //si crei un nuovo elemento che sarà un div
@@ -50,3 +56,4 @@ function SquareSpawn(celNum, colNum) {
         //adesso voglio dire che ad essere stampato su console il numero della casella cliccata, come lo traduco nel linguaggio js?
     });
 }
+
