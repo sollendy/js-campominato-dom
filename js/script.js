@@ -14,28 +14,34 @@
 //creo gli elementi html del contenitore del contenitore della griglia e del bottone
 const contEl = document.getElementById('general-cnt');
 const btnEl = document.getElementById('grid-on');
+const resultEl = document.getElementById("result-cnt");
 
 //creo le variabili del numero di celle nella griglia
 let celle = 101;
+let bombSpawn = [];
 
 //creo gli elementi div uno alla volta in un ciclo for presi dalla funzione
 
 //creo l'evento clic per il bottone
+//voglio creare un array di 16 numeri casuali (fatto)
+//SE la cella cliccata corrisponde alla stessa cifra di una bomba... BUM!!! ovviamente intendo che la casella si colorerà di rosso e il gioco si interromperà
+//far sì che questi numeri siano compresi nei blocchi dell'esercizio attraverso forse un comando di parametri o forse tramite un'altra funzione(?)
 btnEl.addEventListener("click", function() {
+    
     for (i = 1; i < celle; i++) {
-     //creo la funzione in cui redigere le istruzioni da dare al click del bottone 
-     //--> dopo aver creato la funzione la appccico qua in una variabile
+        //creo la funzione in cui redigere le istruzioni da dare al click del bottone 
+        //--> dopo aver creato la funzione la appccico qua in una variabile
         SquareSpawn(i, 10);
     }
+    bombSpawn = Array.from({length: 16}, () => Math.floor(Math.random() * 100) + 1);
+        console.log(bombSpawn);
 });
 
-//voglio creare un array di 16 numeri casuali (fatto)
-//far sì che questi numeri siano compresi nei blocchi dell'esercizio attraverso forse un comando di parametri o forse tramite un'altra funzione(?)
 
-//voglio creare un array di 16 numeri casuali
-let bombSpawn = Array.from({length: 16}, () => Math.floor(Math.random() * 100) + 1);
-console.log(bombSpawn);
+
 function SquareSpawn(celNum, colNum) {
+    // console.log(bombSpawn);
+
     //--> nel click voglio che:
     //si crei un nuovo elemento che sarà un div
     //codesto elemento venga appeso nel contenitore generale
@@ -50,10 +56,17 @@ function SquareSpawn(celNum, colNum) {
     contEl.append(cellaEl);
 
     cellaEl.addEventListener('click', function() {
-        cellaEl.style.backgroundColor = "blue";
-        cellaEl.classList.toggle('active');
-        console.log(celNum);
+        //voglio creare un array di 16 numeri casuali, lo inserisco prima del periodo in modo tale che l'array non si ripeta
+        cellaEl.classList.add("clicked");
+        let vittoria;
+        if (bombSpawn.includes(parseInt(cellaEl.innerText))) {
+            cellaEl.style.backgroundColor = "red";
+            //document.writeln("hai perso! ricarica per ricominciare");
+            vittoria = false;
+        } else {
+            cellaEl.style.backgroundColor = "blue";
+            console.log(celNum);
+        }
         //adesso voglio dire che ad essere stampato su console il numero della casella cliccata, come lo traduco nel linguaggio js?
     });
 }
-
