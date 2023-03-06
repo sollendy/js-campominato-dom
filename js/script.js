@@ -17,7 +17,7 @@ const btnEl = document.getElementById('grid-on');
 const resultEl = document.getElementById("result-cnt");
 
 //creo le variabili del numero di celle nella griglia
-let celle = 101;
+let celle = 100;
 let bombSpawn = [];
 let contatore = 0;
 
@@ -29,7 +29,7 @@ let contatore = 0;
 //far sì che questi numeri siano compresi nei blocchi dell'esercizio attraverso forse un comando di parametri o forse tramite un'altra funzione(?)
 btnEl.addEventListener("click", function() {
     
-    for (i = 1; i < celle; i++) {
+    for (i = 1; i <= celle; i++) {
         //creo la funzione in cui redigere le istruzioni da dare al click del bottone 
         //--> dopo aver creato la funzione la appccico qua in una variabile
         SquareSpawn(i, 10);
@@ -74,11 +74,10 @@ function SquareSpawn(celNum, colNum) {
 
         if (bomba) {
             contEl.style.display = "none";
-            let loseEvent = document.createElement("p");
+            let loseEvent = document.createElement("h2");
             loseEvent.innerText = "sei esploso, ricarica e riprova!";
             loseEvent.append(resultEl);
             resultEl.style.display = "block";
-            
         }
         //adesso voglio dire che ad essere stampato su console il numero della casella cliccata, come lo traduco nel linguaggio js?
     });
