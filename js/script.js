@@ -12,7 +12,7 @@
 //do le ultime modifiche con CSS
 
 //creo gli elementi html del contenitore del contenitore della griglia e del bottone
-const contEl = document.getElementById('general-cnt');
+const contEl = document.getElementById('grid-cnt');
 const btnEl = document.getElementById('grid-on');
 const resultEl = document.getElementById("result-cnt");
 
@@ -73,7 +73,7 @@ function SquareSpawn(celNum, colNum) {
         }
 
         if (bomba) {
-            contEl.style.display = "none";
+            //contEl.style.display = "none";
             let loseEvent = document.createElement("h3");
             loseEvent.innerText = "sei esploso, ricarica e riprova!";
             resultEl.append(loseEvent);
@@ -81,7 +81,7 @@ function SquareSpawn(celNum, colNum) {
             resultEl.style.display = "block";
         }
         if (contatore === (celle - bombSpawn.length)) {
-            contEl.style.display = "none";
+            //contEl.style.display = "none";
             let winEvent = document.createElement("h3");
             winEvent.innerHTML = "congratulazioni! Hai fatto 84 punti.";
             resultEl.append(winEvent);
